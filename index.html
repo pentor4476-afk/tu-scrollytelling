@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ธรรมศาสตร์ในข้อมูล — TU Data Scrollytelling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@300;400;600&family=Noto+Serif+Thai:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+<header class="hud">
+  <span class="hud-brand">TU<span>·</span>DATA STORY</span>
+  <span class="hud-scene"><b id="hud-scene">SCENE 1</b> / 9</span>
+</header>
+
+<main>
+
+<!-- ============================================================
+     SCENE 1 — The Foundation & Growth of Education (1934 vs Present)
+     ============================================================ -->
+<section class="scene" id="scene-1" data-scene="1">
+
+  <div class="s1-pin">
+    <svg id="s1-stage" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img"
+         aria-label="ภาพเคลื่อนไหว: จากเนื้อผ้าเสื้อเชิ้ตขาว ข้ามแม่น้ำเจ้าพระยา สู่การวาดตึกโดม ท่าพระจันทร์">
+      <defs>
+        <!-- woven cotton texture for the white shirt (visible at macro zoom) -->
+        <pattern id="fabric" width="0.8" height="0.8" patternUnits="userSpaceOnUse">
+          <rect width="0.8" height="0.8" fill="#f4f1ea"/>
+          <rect width="0.4" height="0.4" fill="#fdfcf8"/>
+          <rect x="0.4" y="0.4" width="0.4" height="0.4" fill="#fdfcf8"/>
+          <path d="M0 0.4H0.8M0.4 0V0.8" stroke="#e6e1d6" stroke-width="0.05"/>
+          <path d="M0 0.2H0.4M0.4 0.6H0.8" stroke="#ffffff" stroke-width="0.06" opacity=".8"/>
+        </pattern>
+        <linearGradient id="shirtShade" x1="0" x2="1">
+          <stop offset="0" stop-color="#8d8778" stop-opacity=".35"/>
+          <stop offset=".25" stop-color="#fff" stop-opacity="0"/>
+          <stop offset=".7" stop-color="#fff" stop-opacity="0"/>
+          <stop offset="1" stop-color="#8d8778" stop-opacity=".4"/>
+        </linearGradient>
+        <linearGradient id="skyDay" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e9dcc3"/>
+          <stop offset="1" stop-color="#fbf3e3"/>
+        </linearGradient>
+        <linearGradient id="skyNight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#07111f"/>
+          <stop offset="1" stop-color="#1b3352"/>
+        </linearGradient>
+        <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#9fb9bf"/>
+          <stop offset="1" stop-color="#5f8590"/>
+        </linearGradient>
+        <radialGradient id="halo">
+          <stop offset="0" stop-color="#ffd76a" stop-opacity=".75"/>
+          <stop offset=".5" stop-color="#ffb43a" stop-opacity=".18"/>
+          <stop offset="1" stop-color="#ffb43a" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0H0V20" fill="none" stroke="#6fb4ff" stroke-width=".4" opacity=".55"/>
+        </pattern>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.4" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+      </defs>
+
+      <!-- the "camera": scroll drives this group's transform -->
+      <g id="s1-cam">
+        <!-- sky -->
+        <rect x="-2000" y="-1500" width="5600" height="2000" fill="url(#skyDay)"/>
+        <g id="night">
+          <rect x="-2000" y="-1500" width="5600" height="2000" fill="url(#skyNight)"/>
+          <g fill="#fff" id="stars"></g>
+        </g>
+
+        <!-- far bank: Tha Phra Chan -->
+        <g id="farbank">
+          <g fill="#b9ad97">
+            <rect x="620" y="470" width="70" height="30"/><rect x="660" y="456" width="40" height="44"/>
+            <rect x="1300" y="462" width="60" height="38"/><rect x="1350" y="474" width="70" height="26"/>
+          </g>
+          <g fill="#4f6550">
+            <circle cx="560" cy="486" r="22"/><circle cx="594" cy="478" r="26"/><circle cx="630" cy="488" r="18"/>
+            <circle cx="712" cy="484" r="20"/><circle cx="1286" cy="484" r="20"/><circle cx="1418" cy="482" r="24"/>
+            <circle cx="1452" cy="488" r="18"/><circle cx="1490" cy="480" r="24"/>
+          </g>
+          <rect x="-2000" y="498" width="5600" height="10" fill="#8a7f6a"/>
+        </g>
+
+        <!-- river -->
+        <rect x="-2000" y="506" width="5600" height="264" fill="url(#river)"/>
+        <g id="waves" stroke="#fff" stroke-linecap="round" fill="none" opacity=".45"></g>
+
+        <!-- near bank (Thonburi side pier) -->
+        <path d="M-2000 768H3600V1500H-2000Z" fill="#4c4338"/>
+        <path d="M-2000 776H3600" stroke="#6b5f50" stroke-width="3"/>
+
+        <!-- the student, seen from behind -->
+        <g id="student">
+          <ellipse cx="330" cy="644" rx="29" ry="35" fill="#1c1916"/>
+          <rect x="318" y="666" width="24" height="22" fill="#c19370"/>
+          <path d="M248 714C258 696 288 690 312 686H348C372 690 402 696 412 714L424 900H236Z" fill="url(#fabric)"/>
+          <path d="M248 714C258 696 288 690 312 686H348C372 690 402 696 412 714L424 900H236Z" fill="url(#shirtShade)"/>
+          <path d="M311 686C320 697 340 697 349 686L346 678C338 688 322 688 314 678Z" fill="url(#fabric)" stroke="#d4cec2" stroke-width=".5"/>
+          <path d="M256 716C298 723 362 723 404 716" stroke="#cfc8ba" stroke-width=".55" fill="none"/>
+          <path d="M256 717.6C298 724.6 362 724.6 404 717.6" stroke="#aaa293" stroke-width=".22" stroke-dasharray=".9 .55" fill="none"/>
+          <path d="M330 721.5V900" stroke="#d6d0c4" stroke-width=".6"/>
+          <path d="M328.6 723V900M331.4 723V900" stroke="#e7e2d8" stroke-width=".25"/>
+        </g>
+
+        <!-- dusk/night dim over the world, below the dome -->
+        <rect id="dim" x="-2000" y="420" width="5600" height="1100" fill="#08121f" opacity="0"/>
+        <rect id="grid" x="560" y="200" width="900" height="420" fill="url(#bpGrid)" opacity="0"/>
+
+        <!-- the Dome: light-up layers -->
+        <ellipse id="halo-el" cx="1000" cy="400" rx="340" ry="190" fill="url(#halo)" opacity="0"/>
+        <g id="reflection" opacity="0" filter="url(#blur6)">
+          <rect x="972" y="512" width="56" height="110" fill="#ffd36a" opacity=".6"/>
+          <rect x="760" y="512" width="200" height="40" fill="#ffd36a" opacity=".25"/>
+          <rect x="1040" y="512" width="200" height="40" fill="#ffd36a" opacity=".25"/>
+        </g>
+        <!-- filled building (ochre walls, dark tiled roofs) -->
+        <g id="dome-fill" opacity="0">
+          <!-- wings -->
+          <rect x="760" y="456" width="205" height="44" fill="#f2d68a"/>
+          <rect x="1035" y="456" width="205" height="44" fill="#f2d68a"/>
+          <path d="M752 456L778 432H965V456Z" fill="#4a3d35"/>
+          <path d="M1035 456V432H1222L1248 456Z" fill="#4a3d35"/>
+          <path d="M790 432V425H806V432Z M1194 432V425H1210V432Z" fill="#3a2f29"/>
+          <path d="M788 425L798 418L808 425Z M1192 425L1202 418L1212 425Z" fill="#2e2520"/>
+          <circle cx="778" cy="430" r="3" fill="#b0543a"/><circle cx="1222" cy="430" r="3" fill="#b0543a"/>
+          <rect x="752" y="455" width="213" height="2.5" fill="#e3bf62"/>
+          <rect x="1035" y="455" width="213" height="2.5" fill="#e3bf62"/>
+          <!-- tower -->
+          <rect x="965" y="410" width="70" height="90" fill="#f6dd96"/>
+          <rect x="961" y="408" width="78" height="5" fill="#e8c565"/>
+          <rect x="977" y="446" width="46" height="7" fill="#b3161f"/>
+          <circle cx="1000" cy="424" r="6.5" fill="#f9f0d8" stroke="#7a6b58" stroke-width=".8"/>
+          <path d="M1000 424V419.5M1000 424L1003 426" stroke="#3a2f29" stroke-width=".7"/>
+          <!-- big flared roof + dormers -->
+          <path d="M926 412Q975 396 986 360H1014Q1025 396 1074 412Z" fill="#3b302a"/>
+          <path d="M984 392V384L989.5 379L995 384V392Z M1005 392V384L1010.5 379L1016 384V392Z" fill="#2c231f" stroke="#5a4a40" stroke-width=".6"/>
+          <!-- lantern + spire -->
+          <rect x="986" y="346" width="28" height="14" fill="#2c231f"/>
+          <path d="M992 348V358M997 348V358M1003 348V358M1008 348V358" stroke="#5f5045" stroke-width="1"/>
+          <path d="M980 347Q994 334 1000 300Q1006 334 1020 347Z" fill="#3b302a"/>
+          <path d="M1000 300V282" stroke="#cfc6b8" stroke-width=".9"/>
+          <rect x="1000.4" y="282" width="12" height="1.4" fill="#c8323a"/>
+          <rect x="1000.4" y="283.4" width="12" height="1.4" fill="#fff"/>
+          <rect x="1000.4" y="284.8" width="12" height="2.8" fill="#2d3a8c"/>
+          <rect x="1000.4" y="287.6" width="12" height="1.4" fill="#fff"/>
+          <rect x="1000.4" y="289" width="12" height="1.4" fill="#c8323a"/>
+        </g>
+        <g id="win-glow" opacity="0" fill="#ffc643" filter="url(#glow)"></g>
+
+        <!-- the Dome: blueprint line sketch (drawn by scroll) -->
+        <g id="bp-lines" fill="none" stroke="#a9d6ff" stroke-opacity="1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <g id="scaffold" stroke-width="1" opacity=".75">
+            <path class="bp" d="M952 500V340M1048 500V340M960 500V340M1040 500V340"/>
+            <path class="bp" d="M952 470H1048M952 440H1048M952 410H1048M952 380H1048M952 344H1048"/>
+            <path class="bp" d="M952 500L1048 440M1048 470L952 410M952 380L1048 344"/>
+          </g>
+          <path class="bp" d="M700 500H1300"/>
+          <path class="bp" d="M965 500V456H760V500M752 456H965M752 456L778 432H965M790 432V425H806V432M788 425L798 418L808 425"/>
+          <path class="bp" d="M1035 500V456H1240V500M1035 456H1248L1222 432H1035M1194 432V425H1210V432M1192 425L1202 418L1212 425"/>
+          <path class="bp" d="M965 500V410H1035V500M961 408H1039V413H961Z"/>
+          <path class="bp" d="M977 446H1023V453H977ZM993.5 424A6.5 6.5 0 1 0 1006.5 424A6.5 6.5 0 1 0 993.5 424"/>
+          <path class="bp" d="M926 412Q975 396 986 360H1014Q1025 396 1074 412ZM984 392V384L989.5 379L995 384V392M1005 392V384L1010.5 379L1016 384V392"/>
+          <path class="bp" d="M986 360V346H1014V360M992 348V358M997 348V358M1003 348V358M1008 348V358"/>
+          <path class="bp" d="M980 347Q994 334 1000 300Q1006 334 1020 347Z"/>
+          <path class="bp" d="M1000 300V282M1000 282H1012V290.4H1000"/>
+          <path class="bp" id="bp-win" d=""/>
+        </g>
+      </g>
+    </svg>
+
+    <!-- captions layered over the stage -->
+    <div class="s1-cap cap-title">
+      <p class="kicker">SCENE 1</p>
+      <h1>THE FOUNDATION OF<br>OPEN EDUCATION</h1>
+      <p class="sub">FROM A SINGLE WHITE SHIRT TO A PRESTIGIOUS DOME OF LEARNING.</p>
+      <p class="scroll-hint">เลื่อนลงเพื่อเริ่มเรื่องราว <span>↓</span></p>
+    </div>
+
+    <div class="s1-cap cap-river">
+      <p class="tag">แม่น้ำเจ้าพระยา</p>
+      <p class="tag-sub">ฝั่งธนบุรี → ท่าพระจันทร์</p>
+    </div>
+
+    <div class="s1-cap cap-build">
+      <p class="bp-label">DRAWING NO. 01 — ตึกโดม · ท่าพระจันทร์</p>
+      <p class="bp-status">กำลังก่อสร้าง… <b id="bp-pct">0</b>%</p>
+    </div>
+
+    <div class="s1-cap cap-quote">
+      <p>“<b>27 มิถุนายน พ.ศ. 2477</b> ประตูแห่งการเรียนรู้ถูกเปิดออกริมฝั่งเจ้าพระยา”</p>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s1-data">
+    <article class="s1-text">
+      <p class="kicker red th">ประวัติการก่อตั้ง</p>
+      <h2><span class="nw">มหาวิทยาลัยวิชาธรรมศาสตร์</span><br><span class="nw">และการเมือง (ม.ธ.ก.)</span></h2>
+      <p>ก่อตั้งเมื่อ <b>27 มิถุนายน พ.ศ. 2477</b> โดย ศ.ดร.ปรีดี พนมยงค์ ในฐานะ “ตลาดวิชา” ที่เปิดกว้างให้ราษฎรทุกคนเข้าศึกษาวิชากฎหมายและการเมือง ตามหลักการของระบอบประชาธิปไตยที่เพิ่งเริ่มต้น</p>
+      <p>มหาวิทยาลัยได้ปรับปรุงโรงทหารเดิมริมแม่น้ำเจ้าพระยาที่ท่าพระจันทร์ให้เป็นอาคารเรียน โดยมีหอนาฬิกาตรงกลางและหลังคายอดแหลมสูงตระหง่าน จนกลายเป็น <b>“ตึกโดม”</b> สัญลักษณ์ของธรรมศาสตร์มาจนถึงทุกวันนี้</p>
+      <p>จากราษฎรในชุดเชิ้ตขาว <b>7,094 คน</b> ในรุ่นแรก ธรรมศาสตร์ขยายตัวสู่ 4 ศูนย์การศึกษา คือ ท่าพระจันทร์ รังสิต ลำปาง และพัทยา โดยมีนักศึกษารวมกว่า <b>40,000 คน</b></p>
+    </article>
+
+    <figure class="s1-chart" id="s1-chart" aria-labelledby="s1c-title" aria-describedby="s1c-desc">
+      <figcaption class="s1c-head">
+        <p class="chart-type">COMPARISON · HORIZONTAL BAR CHART</p>
+        <h3 id="s1c-title">เอารุ่นแรกทั้งรุ่นมาเรียงต่อกัน ต้องใช้ถึง <span class="hl">5.6 รุ่น</span><br>ถึงจะเท่าจำนวนนักศึกษาธรรมศาสตร์วันนี้</h3>
+        <p class="s1c-sub" id="s1c-desc">จำนวนนักศึกษา รุ่นแรก พ.ศ. 2477 = 7,094 คน เทียบกับปัจจุบัน รวม 4 ศูนย์ = กว่า 40,000 คน · แกนเดียวกัน เริ่มที่ 0</p>
+      </figcaption>
+
+      <ul class="s1c-legend" aria-label="คำอธิบายสัญลักษณ์">
+        <li><i class="sw past"></i>รุ่นแรก พ.ศ. 2477</li>
+        <li><i class="sw now"></i>ปัจจุบัน (รวม 4 ศูนย์)</li>
+        <li><i class="sw seg"></i>1 ช่อง = 7,094 คน (เท่ารุ่นแรกทั้งรุ่น)</li>
+        <li><i class="sw part"></i>ลายเฉียง = เศษ 0.64 รุ่น</li>
+      </ul>
+
+      <div class="s1c-plot" id="s1c-plot"></div>
+
+      <div class="s1c-foot">
+        <div class="multiplier">
+          <span class="mult-num">≈ <b id="mult-n">5.6</b><em>×</em></span>
+          <span class="mult-txt">40,000 ÷ 7,094 = 5.64 <br>จากราษฎรริมเจ้าพระยา สู่นักศึกษาใน 4 ศูนย์</span>
+        </div>
+        <p class="note">ที่มา: ประวัติมหาวิทยาลัยธรรมศาสตร์ (tu.ac.th)<br>ปัจจุบัน “กว่า 40,000 คน” รวมท่าพระจันทร์ รังสิต ลำปาง พัทยา<br>(กราฟใช้ค่า 40,000)</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 2 — The Secret Fortress & Free Thai Network (1942–1945)
+     ============================================================ -->
+<section class="scene" id="scene-2" data-scene="2">
+
+  <div class="s2-pin">
+    <!-- the Scene 1 Dome stage is cloned in here by scene2.js -->
+    <div class="s2-dome"></div>
+
+    <!-- bird's-eye flow map (D3) -->
+    <svg id="s2-map" aria-label="แผนที่เครือข่ายวิทยุลับของเสรีไทย จากตึกโดม ท่าพระจันทร์ ไปยังฐานฝ่ายสัมพันธมิตร"></svg>
+    <div class="s2-labels" id="s2-labels"></div>
+
+    <div class="s2-cap s2-title">
+      <p class="kicker th">SCENE 2 · พ.ศ. 2485–2488</p>
+      <h1>THE SECRET FORTRESS</h1>
+      <p class="sub">BENEATH THE DOME, LIBERTY IS DEFENDED IN THE SHADOWS OF WAR.</p>
+    </div>
+
+    <div class="s2-cap s2-blackout">
+      <p class="tag">BLACKOUT</p>
+      <p class="tag-sub">กรุงเทพฯ ยามสงคราม · ทุกดวงไฟต้องดับลง</p>
+    </div>
+
+    <div class="s2-cap s2-morse">
+      <p class="morse" id="s2-morse" aria-hidden="true"></p>
+      <p class="morse-txt">ห้องยอดตึกโดม — เงาร่างหนึ่งกำลังเคาะรหัส ส่งข่าวกรองจาก <b>“รูธ” (RUTH)</b> นามรหัสของ ปรีดี พนมยงค์ ผู้นำขบวนการเสรีไทยภายในประเทศ</p>
+      <p class="dramatized">* ภาพจำลองเชิงสัญลักษณ์</p>
+    </div>
+
+    <div class="s2-cap s2-signal">
+      <p>สัญญาณลับพุ่งออกจากยอดโดม…</p>
+    </div>
+
+    <div class="s2-cap s2-maptitle">
+      <p class="kicker">GEOGRAPHIC FLOW MAP · LATCH: LOCATION</p>
+      <h3>เครือข่ายเสรีไทย: จากท่าพระจันทร์สู่ฝ่ายสัมพันธมิตร</h3>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s2-data">
+    <header class="s2-data-head">
+      <p class="kicker yellow th">เครือข่ายเสรีไทยในตัวเลข</p>
+      <h2>ใต้ร่มเงาตึกโดม<br>คือกองบัญชาการลับของขบวนการเสรีไทย</h2>
+      <p>ในช่วงสงครามโลกครั้งที่ 2 ปรีดี พนมยงค์ ซึ่งเป็นทั้งผู้ประศาสน์การมหาวิทยาลัยและผู้สำเร็จราชการแทนพระองค์ ใช้ธรรมศาสตร์เป็นศูนย์บัญชาการใต้ดินของเสรีไทย ห้องทำงานของผู้ประศาสน์การอยู่ที่ห้องมุขหน้าตึกโดม ขณะที่สนามหลังตึกใช้ฝึกนักศึกษาที่เข้าร่วมขบวนการ</p>
+    </header>
+
+    <p class="s2-note">หมายเหตุ: ไม่พบบันทึกสาธารณะที่ระบุจำนวนโทรเลขรหัสลับทั้งหมด จึงใช้ตัวเลขที่มีหลักฐานอ้างอิงแทน<br>
+    ที่มา: E. Bruce Reynolds, “OSS and Free Thai”, CIA Studies in Intelligence · The National Archives (UK) blog, “The Free Thai Movement and the SOE” · Wikipedia: Free Thai Movement, Thammasat University · เดลินิวส์ (16 ส.ค. 2567)</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 3 — Academic Expansion Spectrum (1950s–1970s)
+     ============================================================ -->
+<section class="scene" id="scene-3" data-scene="3">
+
+  <div class="s3-pin">
+    <svg id="s3-stage" aria-label="ภาพเคลื่อนไหว: รุ่งอรุณหลังสงคราม เส้นสัญญาณลับม้วนกลับเข้าตึกโดม และแตกแขนงเป็นสายธารแห่งความรู้ 5 สี"></svg>
+    <div class="s3-tree" id="s3-tree" aria-label="Treemap คณะวิชาของธรรมศาสตร์ตามช่วงปี"></div>
+
+    <div class="s3-cap s3-title">
+      <p class="kicker th">SCENE 3 · ทศวรรษ 2490–2520</p>
+      <h1>ACADEMIC EXPANSION<br>SPECTRUM</h1>
+      <p class="sub">AFTER THE WAR, A NEW DAWN — ONE DOME, MANY STREAMS OF KNOWLEDGE.</p>
+    </div>
+
+    <div class="s3-cap s3-dawn">
+      <p>16 สิงหาคม พ.ศ. 2488 — สงครามสิ้นสุด สัญญาณลับกลับคืนสู่ตึกโดม</p>
+    </div>
+
+    <div class="s3-cap s3-streams">
+      <p class="kicker">MULTI-COLOR KNOWLEDGE STREAMS</p>
+      <p class="s3-streams-txt">จากเส้นสายแห่งการต่อสู้ สู่ <b>สายธารแห่งความรู้ 5 สาย</b> ที่แตกแขนงออกจากตึกโดม</p>
+      <ul class="s3-legend" id="s3-legend"></ul>
+    </div>
+
+    <div class="s3-cap s3-head">
+      <div>
+        <p class="kicker">TREEMAP · COMPOSITION &amp; HIERARCHY</p>
+        <h3>คณะวิชาของธรรมศาสตร์ ขยายตัวทีละทศวรรษ</h3>
+        <p class="s3-metric">ขนาดบล็อก = จำนวนปีที่คณะเปิดสอนมาแล้ว ณ ปีนั้น · ขนาดกรอบรวมโตตามผลรวม</p>
+      </div>
+      <div class="s3-year">
+        <p class="s3-year-be">พ.ศ. <b id="s3-year">2493</b></p>
+        <p class="s3-year-ce">ค.ศ. <span id="s3-year-ce">1950</span> · <span id="s3-count">4</span> คณะ</p>
+        <ol class="s3-ticks" id="s3-ticks"></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s3-data">
+    <header>
+      <p class="kicker red th">ไทม์ไลน์การก่อตั้งคณะ</p>
+      <h2>หลังสงคราม ธรรมศาสตร์เปลี่ยนจาก “ตลาดวิชา”<br>สู่มหาวิทยาลัยหลายคณะ</h2>
+      <p>ปี พ.ศ. 2492 คณะรัฐศาสตร์และคณะเศรษฐศาสตร์ถือกำเนิดขึ้นเคียงข้างนิติศาสตร์และพาณิชยศาสตร์และการบัญชี ตามด้วยสังคมสงเคราะห์ศาสตร์และวารสารศาสตร์ในปี 2497 และศิลปศาสตร์ในปี 2504 ก่อนที่สังคมวิทยาและมานุษยวิทยาจะแยกเป็นหน่วยงานของตนเองในปี 2519</p>
+    </header>
+    <div class="s3-timeline" id="s3-timeline" role="img" aria-label="ไทม์ไลน์ปีที่ก่อตั้งคณะ พ.ศ. 2477 ถึง 2522"></div>
+    <p class="note">หมายเหตุ: ไม่พบข้อมูลสาธารณะของจำนวนนักศึกษาแยกรายคณะในทศวรรษ 2490–2520 ขนาดบล็อกจึงแสดง “อายุการเปิดสอนสะสม” ของแต่ละคณะแทน · วารสารศาสตร์เริ่มเป็นแผนกในปี 2497 และยกฐานะเป็นคณะในปี 2522<br>
+    ที่มา: Wikipedia: Thammasat University · แนวหน้า (พระราชกฤษฎีกาจัดตั้งคณะสังคมสงเคราะห์ศาสตร์ พ.ศ. 2497; คณะวารสารศาสตร์ครบ 68 ปี 26 พ.ย. 2565)</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 4 — The Great Shift to Rangsit (พ.ศ. 2529)
+     ============================================================ -->
+<section class="scene" id="scene-4" data-scene="4">
+
+  <div class="s4-pin">
+    <svg id="s4-stage" aria-label="แผนที่ซูมจากประเทศไทยสู่กรุงเทพฯ ท่าพระจันทร์เชื่อมสู่รังสิต แล้วแปลงเป็นกราฟพื้นที่ซ้อน"></svg>
+    <div class="s4-labels" id="s4-labels"></div>
+
+    <div class="s4-cap s4-title">
+      <p class="kicker th">SCENE 4 · พ.ศ. 2529</p>
+      <h1>THE GREAT SHIFT<br>TO RANGSIT</h1>
+      <p class="sub">FROM A RIVERBANK OF 50 RAI TO AN OPEN FIELD OF 2,600+ RAI.</p>
+    </div>
+
+    <div class="s4-cap s4-zoom">
+      <p>ผู้เรียนเพิ่มขึ้น บทบาทของมหาวิทยาลัยกว้างขึ้น — แต่พื้นที่ริมเจ้าพระยามีอยู่เท่าเดิม</p>
+    </div>
+
+    <div class="s4-cap s4-bridge">
+      <p class="big">1986: From 50 Rai to 2,600+ Rai</p>
+      <p class="small">พ.ศ. 2529 ธรรมศาสตร์ขยายศูนย์การเรียนการสอนหลักไปยังทุ่งรังสิต จังหวัดปทุมธานี</p>
+    </div>
+
+    <div class="s4-cap s4-chart-head">
+      <p class="kicker">STACKED AREA CHART · LATCH: LOCATION &amp; TIME</p>
+      <h3>จากสายสังคมศาสตร์ สู่วิทยาศาสตร์ เทคโนโลยี และสุขภาพ</h3>
+      <ul class="s4-legend">
+        <li><i class="red"></i>คณะสายสังคมศาสตร์ที่มีอยู่แล้วในปี 2529 (ท่าพระจันทร์)</li>
+        <li><i class="gold"></i>คณะ/สถาบันสายวิทยาศาสตร์ เทคโนโลยี และสุขภาพ ที่เกิดหลังเปิดศูนย์รังสิต</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s4-data">
+    <header>
+      <p class="kicker red th">การตัดสินใจครั้งใหญ่</p>
+      <h2>รังสิตไม่ใช่แค่ “พื้นที่ใหม่”<br>แต่คือโครงสร้างการศึกษาแบบใหม่</h2>
+      <p>พื้นที่ท่าพระจันทร์ราว 50 ไร่ไม่พอรองรับการเติบโตอีกต่อไป ธรรมศาสตร์จึงขยายศูนย์การเรียนการสอนหลักไปยังรังสิต ซึ่งกว้างกว่าราว 54 เท่า และเปิดทางให้คณะสายวิทยาศาสตร์ เทคโนโลยี และสุขภาพเกิดขึ้นตามมา จนในปี 2549 หลักสูตรปริญญาตรีทุกหลักสูตร ยกเว้นหลักสูตรนานาชาติ ย้ายมาเรียนที่รังสิต</p>
+    </header>
+    <p class="note">หมายเหตุ: ไม่พบข้อมูลสาธารณะของจำนวนนักศึกษาแยกตามศูนย์ในแต่ละปี กราฟจึงแสดง “จำนวนคณะ/สถาบัน” ตามปีที่ก่อตั้งแทน · คณะทันตแพทยศาสตร์ พยาบาลศาสตร์ สาธารณสุขศาสตร์ และเภสัชศาสตร์ ยังไม่ได้รวมในกราฟเพราะยังไม่พบปีก่อตั้งที่อ้างอิงได้ · ตัวเลขพื้นที่ 50 และ 2,681 ไร่ตาม storyboard ควรตรวจสอบกับแหล่งข้อมูลของมหาวิทยาลัย · Wikipedia ระบุว่ารังสิตรับนักศึกษารุ่นแรกในปี ค.ศ. 1985<br>
+    ที่มา: Wikipedia: Thammasat University · Thammasat Fact Sheet (2017, 2023) · เดลินิวส์ (ศิษย์เก่ารังสิตรุ่น 2529)</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 5 — Expanding Beyond Bangkok: Lampang & Pattaya
+     ============================================================ -->
+<section class="scene" id="scene-5" data-scene="5">
+
+  <div class="s5-pin">
+    <svg id="s5-stage" aria-label="แผนที่ประเทศไทย: เส้นแสงจากท่าพระจันทร์แตกแขนงสู่ศูนย์ลำปางและศูนย์พัทยา"></svg>
+    <div class="s5-labels" id="s5-labels"></div>
+
+    <div class="s5-cap s5-title">
+      <p class="kicker th">SCENE 5 · จากเมืองหลวงสู่ภูมิภาค</p>
+      <h1>EXPANDING<br>BEYOND BANGKOK</h1>
+      <p class="sub">FROM ONE CAPITAL CAMPUS TO A NATIONWIDE NETWORK OF LEARNING.</p>
+    </div>
+
+    <div class="s5-cap s5-intro">
+      <p>การเดินทางไม่ได้หยุดอยู่ที่รังสิต — โอกาสทางการเรียนรู้ถูกส่งต่อไปยัง<b class="n">ภาคเหนือ</b> และ<b class="e">ภาคตะวันออก</b></p>
+    </div>
+
+    <aside class="s5-panel" id="s5-panel">
+      <p class="kicker">TIMELINE · LATCH: LOCATION &amp; TIME</p>
+      <h3>เครือข่ายศูนย์การศึกษา 4 แห่ง เกิดขึ้นเมื่อไร</h3>
+      <div class="s5-tl" id="s5-tl"></div>
+      <h4>ขนาดพื้นที่ (ไร่)</h4>
+      <div class="s5-area" id="s5-area"></div>
+      <div class="s5-roles">
+        <p><i class="n"></i><b>ลำปาง</b> — หลักสูตรเพื่อการพัฒนาท้องถิ่นและภูมิภาค เช่น พัฒนาสังคม สังคมวิทยาแบบสหวิทยาการ นิติศาสตร์ และการออกแบบหัตถกรรม</p>
+        <p><i class="e"></i><b>พัทยา</b> — ที่ตั้งวิทยาลัยนวัตกรรมการศึกษา เน้นหลักสูตรขั้นสูงและการอบรมด้านการพัฒนาชนบทและการจัดการ</p>
+      </div>
+    </aside>
+
+    <div class="s5-cap s5-final">
+      <p>“จากหนึ่งจุดเริ่มต้น<br><span class="nw">สู่เครือข่ายการเรียนรู้</span> <span class="nw">ที่เชื่อมโยงผู้คนและภูมิภาคเข้าด้วยกัน”</span></p>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s5-data">
+    <header>
+      <p class="kicker red th">สี่ศูนย์ หนึ่งมหาวิทยาลัย</p>
+      <h2>จากมหาวิทยาลัยในเมืองหลวง<br>สู่เครือข่ายการศึกษาระดับภูมิภาค</h2>
+      <p>จากท่าพระจันทร์สู่รังสิต ธรรมศาสตร์ขยายพื้นที่เพื่อรองรับการเติบโตของการศึกษา แต่การเดินทางไม่ได้หยุดอยู่เพียงเท่านั้น เมื่อโอกาสทางการเรียนรู้ถูกส่งต่อไปยังลำปางและพัทยา ธรรมศาสตร์จึงค่อย ๆ พัฒนาจากมหาวิทยาลัยที่มีศูนย์กลางในเมืองหลวง สู่เครือข่ายการศึกษาที่เชื่อมโยงผู้คน ชุมชน และการพัฒนาในระดับภูมิภาค</p>
+    </header>
+    <p class="note">หมายเหตุ: ไม่พบข้อมูลสาธารณะของจำนวนนักศึกษาและจำนวนหลักสูตรรายศูนย์ย้อนหลัง จึงแสดงเป็นไทม์ไลน์เหตุการณ์สำคัญแทน · ระยะทางเป็นระยะทางเส้นตรงโดยประมาณ คำนวณจากพิกัด ไม่ใช่ระยะทางถนน · ตัวเลขพื้นที่ท่าพระจันทร์และรังสิตตาม storyboard · พื้นที่ศูนย์ลำปาง 364 ไร่ ตามข้อมูลจากผู้จัดทำ<br>
+    ที่มา: Wikipedia: Thammasat University (ลำปาง: สภามหาวิทยาลัยอนุมัติ ค.ศ. 1996, ย้ายสู่ที่ตั้งปัจจุบัน ค.ศ. 2003, นักศึกษาไม่ถึง 1,000 คน · พัทยา: ที่ดิน 566 ไร่ ได้รับบริจาค ค.ศ. 1987, เริ่มก่อสร้าง ค.ศ. 1997) · TU Admissions ปีการศึกษา 2569 (หลักสูตรพหุวิทยาการ ศูนย์ลำปาง 5 วิชาเอก)</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 6 — Who sits in which faculty? (gender by faculty, 2569)
+     ============================================================ -->
+<section class="scene" id="scene-6" data-scene="6">
+  <div class="s6b-pin">
+    <div class="s6b-cap s6b-title">
+      <p class="kicker th">SCENE 6 · ชาย–หญิง ในแต่ละคณะ</p>
+      <h1>WHO SITS IN<br>WHICH FACULTY?</h1>
+      <p class="sub">SAME UNIVERSITY. VERY DIFFERENT CLASSROOMS.</p>
+    </div>
+
+    <div class="s6b-main">
+      <header>
+        <p class="kicker th">DOT UNIT BAR CHART · นักศึกษาแยกตามเพศและคณะ ปี 2569</p>
+        <h2>วิศวะยังเป็นห้องของผู้ชาย <span class="nw">พยาบาลเป็นห้องของผู้หญิง</span></h2>
+        <p class="s6b-key"><span><i class="m"></i>ชาย</span><span><i class="f"></i>หญิง</span><span>1 จุด = นักศึกษา 2 คน · ตัวเลขบนแท่ง = จำนวนจริง</span></p>
+      </header>
+      <svg id="s6b-chart" role="img" aria-label="นักศึกษาปี 2569 แยกตามเพศ: วิศวกรรมศาสตร์ ชาย 537 หญิง 254; แพทยศาสตร์ ชาย 109 หญิง 128; พาณิชยศาสตร์และการบัญชี ชาย 386 หญิง 503; นิติศาสตร์ ชาย 362 หญิง 529; พยาบาลศาสตร์ ชาย 18 หญิง 81"></svg>
+      <div class="s6b-overall">
+        <p class="lbl"><b>ทั้งมหาวิทยาลัย</b> ทุกคณะ ทุกศูนย์ · 10,158 คน</p>
+        <div class="s6b-strip" id="s6b-strip"><span class="m" style="--w:37"><b>ชาย 37%</b> 3,722</span><span class="f" style="--w:63"><b>หญิง 63%</b> 6,436</span></div>
+      </div>
+      <p class="s6b-src">ข้อมูลนักศึกษา ปี 2569 · สัดส่วนต่อ 100 คนปัดเศษ · จำนวนจุดปัดเศษจากจำนวนจริง ÷ 2</p>
+    </div>
+
+    <div class="s6b-cap s6b-step at-right"><p class="kicker th">วิศวกรรมศาสตร์</p><p>ใน 100 คน มี<b class="m">ชาย 67</b> และ<b class="f">หญิง 33</b> — คณะเดียวที่ผู้ชายยังเป็นเสียงส่วนใหญ่</p></div>
+    <div class="s6b-cap s6b-step at-left"><p class="kicker th">พยาบาลศาสตร์</p><p>กลับด้านชัดที่สุด <b class="f">หญิง 82</b> ต่อ<b class="m">ชาย 18</b> หรือราว 4 ใน 5 คน</p></div>
+    <div class="s6b-cap s6b-step at-center"><p class="kicker th">ภาพรวมทั้งมหาวิทยาลัย</p><p>นักศึกษา 10,158 คน เป็น<b class="f">หญิง 63%</b> และ<b class="m">ชาย 37%</b> — ผู้หญิงคือเสียงส่วนใหญ่ของธรรมศาสตร์วันนี้</p></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 7 — From Campus to Society (graduates & careers)
+     ============================================================ -->
+<section class="scene" id="scene-7" data-scene="7">
+
+  <div class="s7-pin">
+    <svg id="s7-stage" aria-label="จุดเล็ก ๆ แทนนักศึกษา รวมตัวเป็นภาพบัณฑิตสวมครุย แล้วกลายเป็นกราฟแท่งจำนวนบัณฑิต และ Sankey Diagram การมีงานทำ"></svg>
+    <div class="s7-labels" id="s7-labels"></div>
+
+    <div class="s7-cap s7-title">
+      <p class="kicker th">SCENE 7 · จากรั้วมหาวิทยาลัยสู่สังคม</p>
+      <h1>FROM CAMPUS<br>TO SOCIETY</h1>
+      <p class="sub">EVERY DOT IS A STORY THAT LEAVES THE DOME.</p>
+    </div>
+
+    <div class="s7-cap s7-question">
+      <p>“เมื่อการศึกษาเปิดโอกาสให้ผู้คนมากขึ้น<br>แล้วคนเหล่านั้นก้าวออกไปสร้างบทบาทอะไรในสังคม?”</p>
+    </div>
+
+    <div class="s7-cap s7-count">
+      <p class="kicker th">ANIMATED BAR CHART · ผู้สำเร็จการศึกษา (ทุกระดับ)</p>
+      <p class="s7-big"><b id="s7-total">0</b> คน</p>
+      <p class="s7-sub">บัณฑิตรวม 5 ปีการศึกษาที่มีข้อมูล (2562–2567) · 1 จุด = บัณฑิต 100 คน</p>
+    </div>
+
+    <div class="s7-cap s7-sankey-head">
+      <p class="kicker th">SANKEY DIAGRAM · บัณฑิตปริญญาตรีไปไหนต่อ</p>
+      <h3>บัณฑิต 6,366 คนที่ตอบแบบสำรวจภาวะการมีงานทำ</h3>
+      <p>ความหนาของเส้น = สัดส่วนบัณฑิต · ผลสำรวจเผยแพร่ ก.พ. 2568</p>
+    </div>
+
+    <div class="s7-cap s7-final">
+      <div class="s7-kpis">
+        <div><b>48,062</b><span>บัณฑิต 5 ปีการศึกษาที่มีข้อมูล</span></div>
+        <div><b>92.62%</b><span>มีงานทำ (บัณฑิต ป.ตรี)</span></div>
+        <div><b>64.77%</b><span>ของผู้มีงานทำอยู่ภาคเอกชน</span></div>
+      </div>
+      <p class="s7-close">“การเติบโตของธรรมศาสตร์ไม่ได้สิ้นสุดที่รั้วมหาวิทยาลัย<br>แต่ดำเนินต่อผ่านผู้คนที่นำความรู้ไปสร้างคุณค่าในสังคม”</p>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s7-data">
+    <header>
+      <p class="kicker red th">จากนักศึกษา สู่บัณฑิต สู่สังคม</p>
+      <h2>บทบาทของมหาวิทยาลัย<br>ไม่ได้สิ้นสุดในวันรับปริญญา</h2>
+      <p>ตลอดระยะเวลาที่ผ่านมา ธรรมศาสตร์ไม่ได้เป็นเพียงสถานที่ให้ความรู้ แต่ยังเป็นจุดเริ่มต้นของเส้นทางชีวิตผู้คนจำนวนมาก จากนักศึกษาที่ก้าวเข้าสู่รั้วมหาวิทยาลัย สู่บัณฑิตที่ออกไปทำหน้าที่ในหลากหลายอาชีพ ทั้งภาครัฐ ภาคธุรกิจ และงานอิสระ</p>
+    </header>
+    <div class="s7-grid">
+      <table class="s7-tbl">
+        <thead><tr><th>ปีการศึกษา</th><th>ผู้สำเร็จการศึกษา</th><th>ที่มา</th></tr></thead>
+        <tbody>
+          <tr><td>2562</td><td>9,523</td><td>กรุงเทพธุรกิจ</td></tr>
+          <tr><td>2563</td><td>9,049</td><td>กรุงเทพธุรกิจ</td></tr>
+          <tr><td>2565</td><td>9,847*</td><td>คำนวณจาก มธ. + อว.</td></tr>
+          <tr><td>2566</td><td>9,949</td><td>อว. (ผ่าน TNews)</td></tr>
+          <tr><td>2567</td><td>9,694</td><td>มธ.</td></tr>
+        </tbody>
+      </table>
+      <table class="s7-tbl">
+        <thead><tr><th>ภาวะการมีงานทำ (บัณฑิต ป.ตรี)</th><th>ร้อยละ</th></tr></thead>
+        <tbody>
+          <tr><td>มีงานทำ</td><td>92.62%</td></tr>
+          <tr><td>— ภาคเอกชน</td><td>64.77%</td></tr>
+          <tr><td>— ข้าราชการและเจ้าหน้าที่รัฐ</td><td>15.83%</td></tr>
+          <tr><td>— ธุรกิจอิสระ</td><td>12.45%</td></tr>
+          <tr><td>— ภาคอื่น / ไม่ระบุ</td><td>6.95%</td></tr>
+          <tr><td>อัตรามีงานทำ: วิทย์สุขภาพ · สังคม-มนุษย์ · วิทย์-เทคโน</td><td>95.67 · 92.46 · 91.32%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">หมายเหตุ: จำนวนผู้สำเร็จการศึกษารวมทุกระดับ (ตรี โท เอก ป.บัณฑิต) · *ปี 2565 คำนวณจากยอดรวมปี 2565–2566 ของ มธ. (19,796) ลบยอดปี 2566 ของ อว. (9,949) · ไม่พบข้อมูลปี 2564 และข้อมูลยุคแรก · สัดส่วนภาคการทำงานคิดจากผู้มีงานทำ (เอกชน+ราชการ+อิสระ รวม 93.05% จึงไม่ใช่สัดส่วนของผู้ตอบทั้งหมด) “ภาคอื่น/ไม่ระบุ” คือส่วนที่เหลือ · ผลสำรวจไม่ระบุรุ่นที่สำรวจ และไม่แยกผู้ศึกษาต่อ จึงรวมไว้ใน “ยังไม่มีงานทำ/ศึกษาต่อ/อื่น ๆ” · จำนวนคนในแผนภาพเป็นค่าประมาณจากร้อยละ<br>
+    ที่มา: มหาวิทยาลัยธรรมศาสตร์ (พิธีพระราชทานปริญญาบัตร ปีการศึกษา 2565–2566 และ 2567) · กรุงเทพธุรกิจ (ปีการศึกษา 2562–2563) · TNews อ้างข้อมูล อว. (ผู้สำเร็จการศึกษาปี 2567 = ปีการศึกษา 2566) · ฐานเศรษฐกิจ / ผู้จัดการออนไลน์ (21 ก.พ. 2568) ผลสำรวจภาวะการมีงานทำบัณฑิต มธ.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 8 — Toward a Green University (Puey 100-Year Learning Park)
+     ============================================================ -->
+<section class="scene" id="scene-8" data-scene="8">
+
+  <div class="s8-pin">
+    <svg id="s8-stage" aria-hidden="true"></svg>
+
+    <div class="s8-mapwrap" id="s8-mapwrap">
+      <svg id="s8-map" aria-label="แผนที่พื้นที่สีเขียวศูนย์รังสิตจาก OpenStreetMap พร้อมไอคอนต้นไม้"></svg>
+      <div class="s8-mapcard">
+        <p class="kicker">SCENE 8 · OPENSTREETMAP</p>
+        <h3>พื้นที่สีเขียวอยู่ตรงไหนในศูนย์รังสิต</h3>
+        <p class="s8-mapstat" id="s8-mapstat">กำลังโหลดแผนที่…</p>
+        <p class="s8-maplegend"><i class="g"></i>พื้นที่สีเขียว <i class="w"></i>แหล่งน้ำ <i class="b"></i>อาคาร <i class="t"></i>ขอบเขตมหาวิทยาลัย</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll-down data layer -->
+  <div class="s8-data">
+    <header>
+      <p class="kicker green th">มหาวิทยาลัยสีเขียว</p>
+      <h2>พื้นที่สีเขียวของศูนย์รังสิต</h2>
+      <p>แผนที่จาก OpenStreetMap แสดงสวน สนาม และแหล่งน้ำภายในขอบเขตศูนย์รังสิต รวมถึงอุทยานการเรียนรู้ป๋วย 100 ปี ที่เปลี่ยนหลังคาอาคารให้เป็นฟาร์มและพื้นที่สาธารณะสีเขียว</p>
+    </header>
+    <p class="note">หมายเหตุ: แผนที่พื้นที่สีเขียวใช้ข้อมูล OpenStreetMap ณ 29 ต.ค. 2569 (© OpenStreetMap contributors, ODbL) ซึ่งอาจไม่ครบทุกพื้นที่ · พื้นที่สีเขียวรวมสวน สนามหญ้า และสนามกีฬาที่อยู่ในขอบเขตมหาวิทยาลัย · ตร.ม./คน คำนวณจากพื้นที่สีเขียวในแผนที่ ÷ นักศึกษาทั้งมหาวิทยาลัย 39,952 คน (ภาค 2/2566)<br>
+    ที่มา: OpenStreetMap · ไทยโพสต์ (10 มี.ค. 2563) อุทยานเรียนรู้ป๋วย 100 ปี · Wikipedia: Thammasat University</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCENE 9 — How far has Thammasat come? (finale)
+     ============================================================ -->
+<section class="scene" id="scene-9" data-scene="9">
+
+  <div class="s9-pin">
+    <div class="s9-layer" id="s9-intro">
+      <svg id="s9-dome" viewBox="730 272 540 236" aria-hidden="true">
+        <path d="M700 500H1300"/>
+        <path d="M965 500V456H760V500M752 456H965M752 456L778 432H965M790 432V425H806V432M788 425L798 418L808 425"/>
+        <path d="M1035 500V456H1240V500M1035 456H1248L1222 432H1035M1194 432V425H1210V432M1192 425L1202 418L1212 425"/>
+        <path d="M965 500V410H1035V500M961 408H1039V413H961Z"/>
+        <path d="M977 446H1023V453H977ZM993.5 424A6.5 6.5 0 1 0 1006.5 424A6.5 6.5 0 1 0 993.5 424"/>
+        <path d="M926 412Q975 396 986 360H1014Q1025 396 1074 412ZM984 392V384L989.5 379L995 384V392M1005 392V384L1010.5 379L1016 384V392"/>
+        <path d="M986 360V346H1014V360M992 348V358M997 348V358M1003 348V358M1008 348V358"/>
+        <path d="M980 347Q994 334 1000 300Q1006 334 1020 347Z"/>
+        <path d="M1000 300V282M1000 282H1012V290.4H1000"/>
+        <path d="M780 466V490M800 466V490M820 466V490M840 466V490M860 466V490M880 466V490M900 466V490M920 466V490M940 466V490M1060 466V490M1080 466V490M1100 466V490M1120 466V490M1140 466V490M1160 466V490M1180 466V490M1200 466V490M1220 466V490"/>
+      </svg>
+      <p class="kicker red">SCENE 9 · THE FINALE</p>
+      <h1>90+ YEARS<br>OF THAMMASAT</h1>
+      <p class="s9-q" id="s9-q">แล้ววันนี้ ธรรมศาสตร์เดินทางมาไกลแค่ไหน?</p>
+    </div>
+
+    <div class="s9-layer" id="s9-award">
+      <p class="kicker yellow">THE IMPACT RANKINGS 2026 · SDG 16</p>
+      <p class="s9-one"><span id="s9-one-num">#1</span></p>
+      <p class="s9-world">WORLDWIDE</p>
+      <div class="s9-award-txt">
+        <h2>Peace, Justice and Strong Institutions</h2>
+        <p>อันดับ 1 จาก 914 มหาวิทยาลัยใน 103 ประเทศและดินแดน ด้านสันติภาพ ความยุติธรรม และสถาบันที่เข้มแข็ง</p>
+        <p class="s9-caveat">เป็นอันดับเฉพาะหมวด SDG 16 ไม่ใช่อันดับมหาวิทยาลัยโลกโดยรวม</p>
+      </div>
+    </div>
+
+    <div class="s9-layer" id="s9-rankwrap">
+      <p class="kicker red th">NIGHTINGALE ROSE CHART · THE IMPACT RANKINGS 2026</p>
+      <h2>บนเวทีโลก ธรรมศาสตร์อยู่ตรงไหน</h2>
+      <div class="s9-rose-wrap">
+        <svg id="s9-rose" role="img" aria-label="อันดับ THE Impact Rankings 2026 ของธรรมศาสตร์ กลีบยิ่งยาวอันดับยิ่งดี: SDG 16 อันดับ 1, SDG 5 อันดับ 25, SDG 11 อันดับ 40, อันดับรวม 46, SDG 17 อันดับ 55 (ร่วม), SDG 7 อันดับ 76"></svg>
+        <div class="s9-legend-box">
+          <p class="s9-legend-cap">ชุดสี Okabe–Ito ที่คนตาบอดสีแยกได้ · ปลายกลีบมีป้ายอันดับกำกับ</p>
+          <ol class="s9-legend" id="s9-legend"></ol>
+        </div>
+      </div>
+      <p class="s9-src">กลีบยิ่งยาว อันดับยิ่งดี · พื้นที่กลีบแปรผันตาม (101 − อันดับ) · ที่มา: Times Higher Education Impact Rankings 2026 (ผ่าน Nation Thailand)</p>
+    </div>
+
+    <div class="s9-layer" id="s9-qswrap">
+      <p class="kicker red th">LINE CHART · QS WORLD UNIVERSITY RANKINGS</p>
+      <h2>อันดับโลก QS ของธรรมศาสตร์ <span class="nw">ฉบับต่อฉบับ</span></h2>
+      <svg id="s9-qs" role="img" aria-label="อันดับ QS World University Rankings ของธรรมศาสตร์ ฉบับ 2014–2023 อยู่ในช่วง 561–700 จากนั้นขยับขึ้นเป็น 600 (2024), 596 (2025), 551 (2026) และ 555 (2027)"></svg>
+      <div class="s9-qs-key"><span><i class="dot"></i>อันดับที่ประกาศเป็นตัวเลข</span><span><i class="band"></i>QS ประกาศเป็นช่วง (จุด = กึ่งกลางช่วง)</span></div>
+      <div class="s9-qs">
+        <p><b>#555</b><span>QS World University Rankings 2027 · อันดับ 3 ของไทย</span></p>
+        <p><b>#126</b><span>QS Asia University Rankings 2026 · อันดับ 4 ของไทย</span></p>
+      </div>
+      <p class="s9-src">ที่มา: QS World University Rankings ฉบับ 2014–2027 รวบรวมโดย xuanxiao.org (ฉบับ 2025–2027 ตรงกับ topuniversities.com และ Mastersportal) · ไม่มีข้อมูลฉบับ 2017 · ปี = ปีของฉบับ (ค.ศ.)</p>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scene1.js?v=5"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="js/scene2.js?v=4"></script>
+<script src="js/scene3.js?v=11"></script>
+<script src="js/th-provinces.js"></script>
+<script src="js/scene4.js?v=2"></script>
+<script src="js/scene5.js?v=12"></script>
+<script src="js/scene6b.js?v=1"></script>
+<script src="js/scene7.js?v=12"></script>
+<script src="js/s8-osm.js?v=2"></script>
+<script src="js/scene8.js?v=14"></script>
+<script src="js/scene9.js?v=15"></script>
+</body>
+</html>
