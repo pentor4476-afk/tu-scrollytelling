@@ -7,7 +7,7 @@
 (function scene4() {
   /* ---------- DATA ---------- */
   const TPC = { name: 'ท่าพระจันทร์', ll: [100.491, 13.757], rai: 50 };
-  const RSU = { name: 'ศูนย์รังสิต', ll: [100.6005, 14.0717], rai: 2681 };
+  const RSU = { name: 'ศูนย์รังสิต', ll: [100.6005, 14.0717], rai: 1757 };
   // province names shown once the camera reaches Bangkok & vicinity
   const PROV_TH = { 'Bangkok Metropolis': 'กรุงเทพมหานคร', 'Pathum Thani': 'ปทุมธานี', 'Nonthaburi': 'นนทบุรี',
     'Samut Prakan': 'สมุทรปราการ', 'Nakhon Pathom': 'นครปฐม', 'Phra Nakhon Si Ayutthaya': 'พระนครศรีอยุธยา' };
@@ -108,7 +108,7 @@
   const lTPC = mk('red', `ท่าพระจันทร์<small>ริมโค้งน้ำเจ้าพระยา</small>`);
   const lRSU = mk('gold', `ศูนย์รังสิต<small>ทุ่งรังสิต · ปทุมธานี</small>`);
   const lSqR = mk('sq red', `ท่าพระจันทร์<em>~50 ไร่</em>`);
-  const lSqG = mk('sq gold', `ศูนย์รังสิต<em>~2,681 ไร่</em><small>กว้างกว่าราว 54 เท่า</small>`);
+  const lSqG = mk('sq gold', `ศูนย์รังสิต<em>~1,757 ไร่</em><small>กว้างกว่าราว 35 เท่า</small>`);
   const lEv = NEW_UNITS.map(u => mk('ev', `${u.y}<small>${u.short}</small>`));
   const lMile = mk('mile', MILESTONE.txt);
   const lTot = mk('total', TOTAL_NOW.txt);

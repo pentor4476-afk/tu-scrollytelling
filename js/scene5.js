@@ -8,7 +8,7 @@
   /* ---------- DATA (sources in the data-layer note) ---------- */
   const C = {
     tpc: { name: 'ท่าพระจันทร์', ll: [100.491, 13.757], color: '#a3171f', rai: 50 },
-    rsu: { name: 'ศูนย์รังสิต', ll: [100.6005, 14.0717], color: '#e2a817', rai: 2681 },
+    rsu: { name: 'ศูนย์รังสิต', ll: [100.6005, 14.0717], color: '#e2a817', rai: 1757 },
     lpg: { name: 'ศูนย์ลำปาง', ll: [99.375, 18.33], color: '#5b6fa6', rai: 364, prov: 'Lampang' },     // Hang Chat district (approx.)
     pty: { name: 'ศูนย์พัทยา', ll: [100.93, 12.95], color: '#5b6fa6', rai: 566, prov: 'Chon Buri' }     // Bang Lamung district (approx.)
   };
@@ -175,7 +175,7 @@
   [2525, 2535, 2545, 2555, 2565].forEach(y => { axis.insertAdjacentHTML('beforeend', `<i style="left:${pos(y)}%">${y}</i>`); });
   tlEl.appendChild(axis);
   const areaEl = document.getElementById('s5-area');
-  const maxRai = 2681;
+  const maxRai = 1757;
   const areaRows = ['tpc', 'lpg', 'pty', 'rsu'].map(k => {
     const c = C[k];
     const row = document.createElement('div'); row.className = 's5-arow';
